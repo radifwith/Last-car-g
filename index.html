@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Open World Racer Escape - High-intensity browser-based car escape game">
+    <meta name="theme-color" content="#4a7c59">
+    <title>Open World Racer Escape 🚗</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-content">
+            <h1>🚗 OPEN WORLD RACER ESCAPE</h1>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loading-progress"></div>
+            </div>
+            <p class="loading-text">Loading game assets...</p>
+            <p class="loading-percent">0%</p>
+        </div>
+    </div>
+
+    <div id="game-container"></div>
+
+    <div id="ui-overlay">
+        <!-- Virtual Joystick Container -->
+        <div id="joystick-container" class="joystick-wrapper">
+            <div class="joystick-base">
+                <div class="joystick-thumb"></div>
+            </div>
+        </div>
+
+        <!-- Boost Button -->
+        <div id="boost-button" class="boost-btn">
+            <div class="boost-icon">🚀</div>
+            <div class="boost-cooldown-overlay"></div>
+            <span class="boost-text">BOOST</span>
+        </div>
+
+        <!-- HUD Elements -->
+        <div id="hud" class="hud-container">
+            <div class="hud-top">
+                <div class="score-display">
+                    <span class="score-label">SCORE</span>
+                    <span class="score-value" id="score-value">0</span>
+                </div>
+                <div class="time-display">
+                    <span class="time-label">TIME</span>
+                    <span class="time-value" id="time-value">0:00</span>
+                </div>
+                <div class="combo-display" id="combo-display">
+                    <span class="combo-text">COMBO</span>
+                    <span class="combo-value" id="combo-value">x0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pause Menu -->
+        <div id="pause-menu" class="menu-overlay hidden">
+            <div class="menu-content">
+                <h2>⏸️ PAUSED</h2>
+                <button class="menu-btn" id="resume-btn">▶️ RESUME</button>
+                <button class="menu-btn" id="restart-btn">🔄 RESTART</button>
+                <button class="menu-btn" id="main-menu-btn">🏠 MAIN MENU</button>
+            </div>
+        </div>
+
+        <!-- Pause Button -->
+        <button id="pause-btn" class="pause-button">⏸️</button>
+    </div>
+
+    <!-- Game Scripts -->
+    <script src="src/utils/Constants.js"></script>
+    <script src="src/utils/MathHelpers.js"></script>
+    <script src="src/utils/SoundManager.js"></script>
+    <script src="src/ui/VirtualJoystick.js"></script>
+    <script src="src/ui/HUD.js"></script>
+    <script src="src/entities/PlayerCar.js"></script>
+    <script src="src/entities/EnemyCar.js"></script>
+    <script src="src/entities/Obstacle.js"></script>
+    <script src="src/systems/SpawnManager.js"></script>
+    <script src="src/systems/AIController.js"></script>
+    <script src="src/systems/BoostSystem.js"></script>
+    <script src="src/systems/ScoreSystem.js"></script>
+    <script src="src/systems/ParticleSystem.js"></script>
+    <script src="src/Game.js"></script>
+    <script src="src/main.js"></script>
+</body>
+</html>
